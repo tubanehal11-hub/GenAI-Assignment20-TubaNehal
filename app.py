@@ -27,7 +27,7 @@ tfidf_matrix = tfidf.fit_transform(df["clean_text"])
 def recommend(item_name, top_n=5):
     index = df[df["title"] == item_name].index[0]
 
-    scores = cosine_similarity(tfidf_matrix[index], tfidf_matrix).toarray().flatten()
+    scores = cosine_similarity(tfidf_matrix[index], tfidf_matrix).flatten()
     similar_indices = scores.argsort()[::-1]
 
     similar_indices = [
