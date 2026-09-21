@@ -10,6 +10,9 @@ Dataset Name: IMDB movies dataset to use as recommender system
 Kaggle Link:
 https://www.kaggle.com/masoudnaghshbandi/imdb-website-recommender-system
 
+## Deployed Application
+https://genai-assignment20-tubanehal.onrender.com
+
 ## Technologies Used
 - Python
 - Pandas
