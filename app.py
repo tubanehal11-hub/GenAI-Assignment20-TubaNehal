@@ -21,13 +21,13 @@ tfidf = TfidfVectorizer(max_features=5000, ngram_range=(1, 2))
 tfidf_matrix = tfidf.fit_transform(df["clean_text"])
 
 # Cosine similarity
-similarity_matrix = cosine_similarity(tfidf_matrix, dense_output=False)
+# Similarity will be calculated when a movie is selected
 
 
 def recommend(item_name, top_n=5):
     index = df[df["title"] == item_name].index[0]
 
-    scores = similarity_matrix[index].toarray().flatten()
+    scores = cosine_similarity(tfidf_matrix[index], tfidf_matrix).toarray().flatten()
     similar_indices = scores.argsort()[::-1]
 
     similar_indices = [
